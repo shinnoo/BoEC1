@@ -1,0 +1,32 @@
+{
+  "name": "Orders",
+  "fields": [
+    {
+      "fieldName": "totalPrice",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "cartId",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "item",
+      "otherEntityRelationshipName": "orders",
+      "relationshipName": "item",
+      "otherEntityField": "name"
+    }
+  ],
+  "entityTableName": "orders",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210503173250"
+}

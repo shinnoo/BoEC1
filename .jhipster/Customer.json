@@ -1,0 +1,50 @@
+{
+  "name": "Customer",
+  "fields": [
+    {
+      "fieldName": "age",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "fullname",
+      "otherEntityRelationshipName": "customer",
+      "relationshipName": "fullname",
+      "otherEntityField": "lastName",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "orders",
+      "otherEntityRelationshipName": "customer",
+      "relationshipName": "orders",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "address",
+      "otherEntityRelationshipName": "customer",
+      "relationshipName": "address",
+      "otherEntityField": "location"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "payment",
+      "otherEntityRelationshipName": "customer",
+      "relationshipName": "payment",
+      "otherEntityField": "code"
+    }
+  ],
+  "entityTableName": "customer",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210503173247"
+}

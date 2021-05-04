@@ -41,6 +41,8 @@
     "jwtSecretKey": "Mzg0NjU4ZTAzMWI5NzVmMTk5NGFhMjcwMzk4ODJhNjc3ODBiMGQ4NjBhZGE3NjZjNjI2NDM3MTFhOWJkNzIxNTU2YmI3YTUyZjE4OTJmMTIyZDgzMmNkOTM5NTA3OGY0YTlhMGI5ZDcxN2Y1M2Q3Y2Y5NWVhZTVhZTY4M2JkYTM=",
     "clientPackageManager": "npm",
     "clientThemeVariant": "",
-    "languages": ["en", "fr"]
+    "languages": ["en", "fr"],
+    "entities": ["Customer", "Fullname", "Address", "Orders", "Cart", "Payment", "Item"],
+    "lastLiquibaseTimestamp": 1620063173000
   }
 }

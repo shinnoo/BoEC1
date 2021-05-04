@@ -1,0 +1,67 @@
+
+entity Customer {
+	age Integer
+}
+
+entity Fullname {
+	firstName String,
+    lastName String
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity Address {
+	location String,
+	street String,
+	city String
+}
+
+entity Orders {
+	totalPrice Long
+    cartId Integer
+}
+
+/**
+ * Task entity.
+ * @author The JHipster team.
+ */
+entity Cart {
+	quantity Integer
+}
+
+/**
+ * The Employee entity.
+ */
+entity Payment {
+	createAt Instant,
+	code String
+}
+
+entity Item {
+	name String,
+	price Long,
+    cartId Integer
+}
+
+relationship ManyToOne {
+  Customer{Orders(id)} to Orders,
+  Customer{Address(location)} to Address,
+  Customer{Payment(code)} to Payment
+  Orders{Item(name)} to Item
+}
+
+relationship OneToOne {
+	Customer{Fullname(lastName)} to Fullname,
+    Cart{Payment(code)} to Payment
+}
+
+paginate Customer, Fullname, Address, Orders, Cart, Payment, Item with pagination
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl 
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
